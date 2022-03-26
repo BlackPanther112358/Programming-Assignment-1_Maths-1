@@ -46,7 +46,7 @@ def input_tuple(sno:int)->tuples:                        #Function to take input
     while try_cnt < 3:                                          #Allow users 3 wrong attempts before terminating the program
         try_cnt += 1
         try:
-            line = list(map(int, input(f'Please enter the space separated values for tuple no. {sno}: ').split()))
+            line = list(map(int, input(f'Please enter the comma separated values for tuple no. {sno}: ').split(',')))
         except Exception:
             print('Please provide input in proper format')
             continue
@@ -62,7 +62,7 @@ def input_tuple(sno:int)->tuples:                        #Function to take input
             else:
                 print('The input can contain only 0\'s and 1\'s')
         else:
-            print('Please enter exactly 4 space - seperated integers in a single line.')
+            print('Please enter exactly 4 comma seperated integers in a single line.')
     print('Program terminated due to multiple incorrect inputs.')
     return False                                                #If correct input is not entered after 3 tries, return False to terminate the program
 
@@ -90,7 +90,7 @@ def check_closure_over_scalar_multiplication()->bool:       #Function to check c
 def main():                                                 #Main function to run the required code.
     # NOTE : We need not check for existence of additive identity as scalar multiplication by 0 also achieves the same.
     global vectors                                              #Use the global variable vectors to store the ones inputted by the user
-    print('Please first enter the number of tuples to be entered. Then, individually input each tuple as space seperated integers')
+    print('Please first enter the number of tuples to be entered. Then, individually input each tuple as comma seperated integers')
     print()
     length = input_length()                                     #Input the length of each vector
     if length is False:
